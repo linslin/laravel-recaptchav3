@@ -122,7 +122,7 @@ class RecaptchaV3
 
     if (typeof refreshGoogleCaptcha === \"undefined\") {
       function refreshGoogleCaptcha (fieldId, action) {
-          grecaptcha.execute('" . $this->sitekey . "', {action: action}).then(function(token) {
+          return grecaptcha.execute('" . $this->sitekey . "', {action: action}).then(function(token) {
              document.getElementById(fieldId).value = token;
           });
       }
